@@ -1,6 +1,9 @@
 'use strict';
 
 import React from 'react';
+import uuid from 'uuid/v1';
+import { categoryCreate } from '../../action/category-actions';
+import {connect} from 'react-redux';
 
 class CategoryForm extends React.Component {
   constructor(props) {
@@ -23,8 +26,12 @@ class CategoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onComplete(Object.assign({}, this.state))
-    //Object.assign is what creates the ability to deal with rest and spread
+    // this.props.onComplete(Object.assign({}, this.state))
+    const category = { ...this.state }
+    category.id = uuid();
+    category.timestamp = Date.now();
+    this.props.handleCategorySubmit(category);
+    
   }
 
   render() {
@@ -52,4 +59,8 @@ class CategoryForm extends React.Component {
   }
 }
 
-export default CategoryForm;
+const mapDispatchToProps = (dispatch) => ({
+  handleCategorySubmit: category => dispatch(categoryCreate(category))
+})
+
+export default connect(null, mapDispatchToProps)(CategoryForm);

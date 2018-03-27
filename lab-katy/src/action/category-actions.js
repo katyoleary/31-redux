@@ -4,8 +4,8 @@ import uuid from 'uuid/v1';
 
 //no logic here, you'd have a helper function for that
 export const categoryCreate = (category) => {
-  category.id = uuid();
-  category.timestamp = new Date();
+  // category.id = uuid();
+  // category.timestamp = new Date(); moving these to category form
   return {
     type: 'CATEGORY_CREATE', 
     payload: category,

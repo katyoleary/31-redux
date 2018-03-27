@@ -4,9 +4,10 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 import DashboardContainer from '../dashboard-container';
-import createAppStore from '../../lib/store.js';
+import rootReducer from '../../lib/store.js';
+import { createStore } from 'redux';
 
-const store = createAppStore();
+const store = createStore(rootReducer);
 
 //entire state managed here below. bc the route throws component. the store holds the state of our app. always wrap app in provider//things that you need to access in your application in your provider
 
