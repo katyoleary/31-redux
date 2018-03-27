@@ -1,14 +1,18 @@
 'use strict';
 
 import React from 'react';
+import uuid from 'uuid/v1';
+import {connect} from 'react-redux';
+
+import { expenseCreate } from '../../action/expense-actions';
 
 class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      title: props.expense ? props.expense.title : '',
-      budget: props.expense ? props.expense.budget : '',
+      title: props.expense ? propss.expense.title : '',
+      price: props.expense ? props.expense.price : '',
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,7 +25,16 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onComplete(Object.assign({}, this.state)) //Object.assign is what allows us to deal with rest and spread
+    const expense = { ...this.state }
+    expense.id = uuid();
+    expense.timestamp = Date.now();
+    // this.props.onComplete({...this.state}); //onComplete our method
+    this.props.expense.categoryID = this.props.category.id;
+    this.props.handleExpenseSubmit(expense);
+
+    if(!this.props.expense) {
+      this.setState({ name: '' });
+    }
   }
 
   render() {
@@ -35,10 +48,10 @@ class ExpenseForm extends React.Component {
           onChange={this.handleChange} />
 
         <input 
-          name='budget'
+          name='price'
           type='number'
-          placeholder='budget'
-          value={this.state.budget}
+          placeholder='price'
+          value={this.state.price}
           onChange={this.handleChange} />
 
         <button type='submit'>{this.props.buttonText}</button>
@@ -48,4 +61,8 @@ class ExpenseForm extends React.Component {
   }
 }
 
-export default ExpenseForm;
+const mapDispatchToProps = dispatch => ({
+  handleExpenseSubmit: expense => dispatch(expenseCreate(expense))
+})
+
+export default connect(null, mapDispatchToProps)(ExpenseForm);

@@ -17,11 +17,9 @@ export default (state=initialState, action) => {
 
     case 'EXPENSE_DESTROY':
       return state.filter( expense => expense.id !== payload.id)
-    
-    case 'EXPENSE_RESET':
-      return initialState
 
     default:
       return state
   }
 }
+
