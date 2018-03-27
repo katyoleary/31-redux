@@ -17,7 +17,7 @@ class CategoryItem extends React.Component {
         <button onClick={() => this.props.destroyCategory(this.props.category.id)}>X</button>
         <h3>{this.props.category.name}</h3>
         <p>{this.props.category.budget}</p>
-        //add category update form
+        
       </li>
     )
   }
