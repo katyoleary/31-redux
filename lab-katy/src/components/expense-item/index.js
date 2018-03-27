@@ -14,15 +14,22 @@ class ExpenseItem extends React.Component {
     return( 
       <section className='expense-item'>
         <div>
-            <div className='expense-content'>
-              <button onClick={() => this.props.destroyExpense(this.props.expense.id)}>X</button>
-              <h2>{expense.title}</h2>
-              <p>{expense.price}</p>
-            </div>
+          <div className='expense-form'>
+            <ExpenseForm />
+          </div>
+          <div className='expense-content'>
+            <button onClick={() => this.props.destroyExpense(expense.id)}>X</button>
+            <h2>{expense.title}</h2>
+            <p>{expense.price}</p>
+          </div>
         </div>
       </section>
     )
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  destroyExpense: expenseId => dispatch(expenseDestroy(expenseId))
+})
 
+export default connect (null, mapDispatchToProps)(ExpenseItem)

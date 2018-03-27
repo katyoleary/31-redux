@@ -11,13 +11,19 @@ class ExpenseForm extends React.Component {
     super(props);
 
     this.state = {
-      title: props.expense ? propss.expense.title : '',
+      title: props.expense ? props.expense.title : '',
       price: props.expense ? props.expense.price : '',
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentWillReceiveProps(props) {
+    if (props.expense) {
+      this.setState(props.expense);
+    }
+  } //this is an event listener. really helpful when we're waiting to hear back from an API
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value }) //CHECK THIS
@@ -28,12 +34,13 @@ class ExpenseForm extends React.Component {
     const expense = { ...this.state }
     expense.id = uuid();
     expense.timestamp = Date.now();
-    // this.props.onComplete({...this.state}); //onComplete our method
+    this.props.onComplete({...this.state}); //onComplete our method
     this.props.expense.categoryID = this.props.category.id;
     this.props.handleExpenseSubmit(expense);
 
     if(!this.props.expense) {
-      this.setState({ name: '' });
+      this.setState({ title: '' });
+      this.setState({ price: '' });
     }
   }
 
