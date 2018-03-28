@@ -23,6 +23,10 @@ class ExpenseForm extends React.Component {
     if (props.expense) {
       this.setState(props.expense);
     }
+
+    if(props.categoryID) {
+      this.setState({ categoryID: props.categoryID });
+    }
   } //this is an event listener. really helpful when we're waiting to hear back from an API
 
   handleChange(e) {
