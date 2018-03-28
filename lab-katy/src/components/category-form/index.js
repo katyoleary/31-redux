@@ -30,9 +30,9 @@ class CategoryForm extends React.Component {
     
   }
 
-  render() {
+  render() { //onSubmit works with pressing enter as well, better than onClick.
     return (
-      <form className='category-form' onSubmit={this.handleSubmit}>
+      <form className='category-form' onSubmit={this.handleSubmit}> 
 
         <input 
           name='name'

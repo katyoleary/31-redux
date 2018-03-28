@@ -12,15 +12,11 @@ class ExpenseItem extends React.Component {
     let {expense, expenseUpdate, expenseDestroy} = this.props;
 
     return( 
-      <section className='expense-item'>
-        <div>
-          <div className='expense-content'>
-            <button onClick={() => this.props.destroyExpense(expense)}>X</button>
-            <h2>{expense.title}</h2>
-            <p>{expense.price}</p>
-          </div>
-        </div>
-      </section>
+      <li className='expense-content'>
+        <button onClick={() => this.props.destroyExpense(expense)}>X</button>
+        <h2>{expense.title}</h2>
+        <p>{expense.price}</p>
+      </li>
     )
   }
 }

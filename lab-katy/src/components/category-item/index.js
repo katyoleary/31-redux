@@ -10,13 +10,13 @@ import ExpenseForm from '../expense-form';
 import ExpenseList from '../expense-list-container';
 
 class CategoryItem extends React.Component {
-  constructor(props) {
+  constructor(props) { 
     super(props);
   }
 
   render() {
     return (
-      <div>
+      <li>
           <button onClick={() => this.props.destroyCategory(this.props.category.id)}>X</button>
           <h3>{this.props.category.name}</h3>
           <p>{this.props.category.budget}</p>
@@ -27,8 +27,8 @@ class CategoryItem extends React.Component {
             categoryID={this.props.category.id}/>
 
           <ExpenseList />
-      </div>
-    )
+      </li>
+    ) //we have expense form
   }
 }
 
