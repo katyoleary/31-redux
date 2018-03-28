@@ -28,6 +28,10 @@ class CategoryForm extends React.Component {
     e.preventDefault();
     this.props.onComplete({...this.state});
     
+    if(!this.props.category) {
+      this.setState({ name: '' });
+      this.setState({ budget: '' });
+    }
   }
 
   render() { //onSubmit works with pressing enter as well, better than onClick.

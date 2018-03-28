@@ -5,4 +5,4 @@
 4. In your browser, go to localhost:8080 for access
 
 ###Use
-You are able to create categories for your budget tracker with budgets for each category, as well as add and delete expenses to each of your categories. 
+You are able to create categories for your budget tracker with budgets for each category, as well as add, update and delete each expense and overall categories. 
