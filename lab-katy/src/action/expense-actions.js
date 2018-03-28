@@ -3,8 +3,8 @@
 import uuid from 'uuid/v1';
 
 export const expenseCreate = (expense) => {
-  // expense.id = uuid();
-  // expense.timestamp = Date.now(); //MOVED to expense-form
+  expense.id = uuid();
+  expense.timestamp = Date.now();
   return {
     type: 'EXPENSE_CREATE', 
     payload: expense,

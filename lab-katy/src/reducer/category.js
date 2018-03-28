@@ -4,7 +4,6 @@ let initialState = [];
 
 export default (state=initialState, action) => {
   let {type, payload} = action;
-  console.log(action.payload);
 
   switch(type) {
     case 'CATEGORY_CREATE':

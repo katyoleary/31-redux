@@ -14,11 +14,8 @@ class ExpenseItem extends React.Component {
     return( 
       <section className='expense-item'>
         <div>
-          <div className='expense-form'>
-            <ExpenseForm />
-          </div>
           <div className='expense-content'>
-            <button onClick={() => this.props.destroyExpense(expense.id)}>X</button>
+            <button onClick={() => this.props.destroyExpense(expense)}>X</button>
             <h2>{expense.title}</h2>
             <p>{expense.price}</p>
           </div>

@@ -26,17 +26,13 @@ class ExpenseForm extends React.Component {
   } //this is an event listener. really helpful when we're waiting to hear back from an API
 
   handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value }) //CHECK THIS
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const expense = { ...this.state }
-    expense.id = uuid();
-    expense.timestamp = Date.now();
-    this.props.onComplete({...this.state}); //onComplete our method
-    this.props.expense.categoryID = this.props.category.id;
-    this.props.handleExpenseSubmit(expense);
+    const { categoryID } = this.props;
+    this.props.onComplete({...this.state, categoryID }); //onComplete our method
 
     if(!this.props.expense) {
       this.setState({ title: '' });

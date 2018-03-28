@@ -26,11 +26,7 @@ class CategoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.onComplete(Object.assign({}, this.state))
-    const category = { ...this.state }
-    category.id = uuid();
-    category.timestamp = Date.now();
-    this.props.handleCategorySubmit(category);
+    this.props.onComplete({...this.state});
     
   }
 

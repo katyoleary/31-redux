@@ -11,7 +11,6 @@ class CategoryList extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <ul>
 
@@ -24,7 +23,6 @@ class CategoryList extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return ({
   categories: state.categories
 })}

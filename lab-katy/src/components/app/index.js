@@ -4,7 +4,7 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 import DashboardContainer from '../dashboard-container';
-import rootReducer from '../../lib/store.js';
+import rootReducer from '../../reducer/index.js';
 import { createStore } from 'redux';
 
 const store = createStore(rootReducer);
@@ -17,7 +17,7 @@ class App extends React.Component {
       console.log('__STATE__', store.getState());
     });
 
-    store.dispatch({ type: null })
+    // store.dispatch({ type: null })
   }
 
   render() {
