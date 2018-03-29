@@ -1,0 +1,16 @@
+header {
+  top: 0;
+  width: 100%;
+  background: $primary-color;
+  padding: $gutter-small;
+  font-size: $font-large;
+  color: $white;
+
+  h3 {
+    
+    text-align: left;
+    font: $font;
+    font-weight: lighter;
+  }
+}
+

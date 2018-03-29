@@ -1,0 +1,22 @@
+@import '../../style/lib/vars';
+
+.category-item {
+  h3 {
+    display: inline-block;
+    font-size: $font-large;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    padding: 1vw 2vw;
+  }
+  p {
+    display: inline-block;
+    font-size: $font-small;
+    padding: 1vw 2vw;
+    
+  }
+  .x {
+    color: $secondary-color;
+    background-color: $mauve;
+  }
+
+}

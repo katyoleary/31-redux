@@ -9,21 +9,23 @@ import { expenseCreate } from '../../action/expense-actions';
 import ExpenseForm from '../expense-form';
 import ExpenseList from '../expense-list-container';
 
+import './_category-item.scss';
+
 class CategoryItem extends React.Component {
   constructor(props) { 
     super(props);
 
-    this.state = {
-      totalBudget = props.category ? props.category.totalBudget : '', //dunno if i need this.
-    }
+    // this.state = {
+    //   totalBudget = props.category ? props.category.totalBudget : '', //dunno if i need this.
+    // }
   }
 
   render() {
     return (
-      <li>
-          <button onClick={() => this.props.destroyCategory(this.props.category)}>X</button>
+      <li className='category-item'>
           <h3>{this.props.category.name}</h3>
           <p>total: {this.props.category.budget}</p>
+          <button className='x' onClick={() => this.props.destroyCategory(this.props.category)}>X</button>
 
           <CategoryForm 
             category={this.props.category}

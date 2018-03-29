@@ -1,13 +1,14 @@
 body {
   font-family: $font;
+  background: $mauve;
 }
 
 button {
   border: none;
-  background: $dark-grey;
+  background: $secondary-color;
   color: $white;
   border-radius: $radius;
-  font-size: $font-sm;
+  font-size: $font-small;
   padding: $btn-pad;
   text-transform: lowercase;
 }
@@ -16,8 +17,16 @@ input[type="text"], input[type="number"] {
   padding: $input-pad;
   border: solid 1px $black;
   width: 50%;
-  margin-right: $gutter-sm;
-  margin-bottom: $gutter-sm;
-  font-size: $font-sm;
+  margin-right: $gutter-small;
+  margin-top: $gutter-small;
+  margin-bottom: $gutter-small;
+  margin-left: $gutter-small;
+  font-size: $font-small;
   text-transform: lowercase;
+}
+
+.x {
+  background: $mauve;
+  color: $secondary-color;
+  cursor: pointer;
 }
