@@ -17,19 +17,22 @@ class ExpenseList extends React.Component {
       expense.categoryID === this.props.categoryID
     );
 
+    console.log('cat ex ', this.props.categoryID, this.props.expenses)
+
     return (
       <ul>
         
         {categoryExpenses.map((expense, i) => 
-          <ExpenseItem expense={expense} key={`expense-item-${i}`} />
+          <ExpenseItem categoryID={this.props.categoryID} expense={expense} key={`expense-item-${i}`} />
         )}
-        
+
       </ul>
     )
   }
 }
 
 const mapStateToProps = state => {
+  console.log('map', state)
   return ({
     expenses: state.expenses
   })
