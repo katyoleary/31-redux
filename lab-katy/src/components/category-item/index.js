@@ -31,7 +31,8 @@ class CategoryItem extends React.Component {
             onComplete={this.props.createExpense}
             categoryID={this.props.category.id}/>
 
-          <ExpenseList />
+          <ExpenseList 
+            categoryID={this.props.category.id} />
       </li>
     ) //we have expense form
   }
