@@ -2,7 +2,7 @@
 
 import React from 'react';
 import uuid from 'uuid/v1';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import { expenseCreate } from '../../action/expense-actions';
 
@@ -19,7 +19,7 @@ class ExpenseForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps(props) { //this is really helpful. lifecycle hook
     if (props.expense) {
       this.setState(props.expense);
     }

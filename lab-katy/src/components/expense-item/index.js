@@ -18,7 +18,7 @@ class ExpenseItem extends React.Component {
         <p>{expense.price}</p>
         
         <ExpenseForm 
-        categoryID={this.props.categoryID}
+          categoryID={this.props.categoryID}
           expense={expense}
           buttonText='update expense'
           onComplete={this.props.updateExpense} />

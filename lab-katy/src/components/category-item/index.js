@@ -12,6 +12,10 @@ import ExpenseList from '../expense-list-container';
 class CategoryItem extends React.Component {
   constructor(props) { 
     super(props);
+
+    this.state = {
+      totalBudget = props.category ? props.category.totalBudget : '', //dunno if i need this.
+    }
   }
 
   render() {
