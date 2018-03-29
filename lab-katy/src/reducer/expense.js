@@ -9,9 +9,14 @@ export default (state=initialState, action) => {
     case 'EXPENSE_CREATE':
       return [...state, payload]
 
-    case 'EXPENSE_UPDATE':
-      return state.map( expenseCreate => 
-      expenseCreate.id === payload.id ? payload : expenseCreate)
+    case 'EXPENSE_UPDATE': {
+      const {categoryID} = payload;
+
+      console.log(state, categoryID)
+      return state.map( expense => expense.id === payload.id ? payload : expense)
+    }
+      // return state.map( expenseCreate => 
+      // expenseCreate.id === payload.id ? payload : expenseCreate)
 
     case 'EXPENSE_DESTROY':
       return state.filter( expense => expense.id !== payload.id)
