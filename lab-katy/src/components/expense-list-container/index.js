@@ -11,12 +11,19 @@ class ExpenseList extends React.Component {
   }
 
   render() {
+    console.log('ex list container expenses', this.props.expenses)
+
+    const categoryExpenses = this.props.expenses.filter( expense =>
+      expense.categoryID === this.props.categoryID
+    );
+
     return (
       <ul>
         
-        {this.props.expenses.map((expense, i) => 
+        {categoryExpenses.map((expense, i) => 
           <ExpenseItem expense={expense} key={`expense-item-${i}`} />
         )}
+        
       </ul>
     )
   }
