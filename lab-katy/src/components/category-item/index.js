@@ -23,13 +23,14 @@ class CategoryItem extends React.Component {
       <li>
           <button onClick={() => this.props.destroyCategory(this.props.category)}>X</button>
           <h3>{this.props.category.name}</h3>
-          <p>{this.props.category.budget}</p>
+          <p>total: {this.props.category.budget}</p>
 
           <CategoryForm 
             category={this.props.category}
             buttonText='update category'
             onComplete={this.props.updateCategory} />
 
+          <h2>create a new expense</h2>
           <ExpenseForm 
             buttonText='create an expense'
             onComplete={this.props.createExpense}
