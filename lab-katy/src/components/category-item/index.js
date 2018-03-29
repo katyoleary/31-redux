@@ -17,7 +17,7 @@ class CategoryItem extends React.Component {
   render() {
     return (
       <li>
-          <button onClick={() => this.props.destroyCategory(this.props.category.id)}>X</button>
+          <button onClick={() => this.props.destroyCategory(this.props.category)}>X</button>
           <h3>{this.props.category.name}</h3>
           <p>{this.props.category.budget}</p>
 

@@ -14,7 +14,7 @@ export default (state=initialState, action) => {
       category.id === payload.id ? payload : category)
 
     case 'CATEGORY_DESTROY':
-      return state.filter( category => category.id !== payload)
+      return state.filter( category => category.id !== payload.id)
 
     case 'CATEGORY_RESET':
       return initialState
