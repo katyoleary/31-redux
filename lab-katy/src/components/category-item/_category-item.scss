@@ -1,16 +1,21 @@
 @import '../../style/lib/vars';
 
 .category-item {
+  border-top: 2px solid;
+  width: 75vw;
+
   h3 {
     display: inline-block;
     font-size: $font-large;
     margin-bottom: 1vw;
     margin-top: 1vw;
-    padding: 1vw 2vw;
+    padding: 2vw 2vw;
+    
   }
   p {
     display: inline-block;
     font-size: $font-small;
+    font-weight: bold;
     padding: 1vw 2vw;
     
   }
@@ -18,5 +23,15 @@
     color: $secondary-color;
     background-color: $mauve;
   }
+}
 
+.category-item-main-content {
+  border: 1px solid;
+  border-radius: 5px;
+  background: $primary-color;
+
+  h2 {
+    margin-left: 2vw;
+    text-transform: lowercase;
+  }
 }

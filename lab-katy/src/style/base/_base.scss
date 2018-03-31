@@ -1,6 +1,7 @@
 body {
   font-family: $font;
   background: $mauve;
+  margin: 2vw 2.5vw auto;
 }
 
 button {
@@ -16,7 +17,7 @@ button {
 input[type="text"], input[type="number"] {
   padding: $input-pad;
   border: solid 1px $black;
-  width: 50%;
+  width: 60%;
   margin-right: $gutter-small;
   margin-top: $gutter-small;
   margin-bottom: $gutter-small;
@@ -28,5 +29,8 @@ input[type="text"], input[type="number"] {
 .x {
   background: $mauve;
   color: $secondary-color;
+  float: right;
   cursor: pointer;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
 }

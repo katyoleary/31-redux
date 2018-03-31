@@ -23,10 +23,13 @@ class CategoryItem extends React.Component {
   render() {
     return (
       <li className='category-item'>
+        <div className='category-item-title'>
           <h3>{this.props.category.name}</h3>
           <p>total: {this.props.category.budget}</p>
           <button className='x' onClick={() => this.props.destroyCategory(this.props.category)}>X</button>
+        </div>
 
+        <div className='category-item-main-content'>
           <CategoryForm 
             category={this.props.category}
             buttonText='update category'
@@ -40,6 +43,7 @@ class CategoryItem extends React.Component {
 
           <ExpenseList 
             categoryID={this.props.category.id} />
+        </div>
       </li>
     ) //we have expense form
   }

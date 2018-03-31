@@ -3,6 +3,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import './_expense-item.scss';
+
 import ExpenseForm from '../expense-form';
 import { expenseUpdate, expenseDestroy } from '../../action/expense-actions';
 
