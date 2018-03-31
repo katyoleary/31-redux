@@ -1,4 +1,30 @@
-.expense-item {
-  border: 1px solid;
+@import '../../style/lib/vars';
+
+.expense-content {
+  // border: 1px solid;
   border-radius: 5px;
+
+  h2 {
+    display: inline-block
+  }
+
+  p {
+    display: inline-block;
+  }
+
+  button {
+    background: $primary-color;
+    color: $secondary-color;
+    float: right;
+    cursor: pointer;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+  .update {
+    background: $secondary-color;
+    color: $white;
+    float: none;
+
+  }
+  
 }

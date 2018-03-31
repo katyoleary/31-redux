@@ -5,7 +5,7 @@ import uuid from 'uuid/v1';
 import { categoryCreate } from '../../action/category-actions';
 import {connect} from 'react-redux';
 
-import './_category_form.scss';
+import './_category-form.scss';
 
 class CategoryForm extends React.Component {
   constructor(props) {

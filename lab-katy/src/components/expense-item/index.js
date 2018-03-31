@@ -17,7 +17,7 @@ class ExpenseItem extends React.Component {
       <li className='expense-content'>
         <button onClick={() => this.props.destroyExpense(expense)}>X</button>
         <h2>{expense.title}</h2>
-        <p>{expense.price}</p>
+        <p>cost: {expense.price}</p>
         
         <ExpenseForm 
           categoryID={this.props.categoryID}
